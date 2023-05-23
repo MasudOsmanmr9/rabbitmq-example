@@ -9,11 +9,6 @@ amqp.connect('amqp://localhost', function(error, connection) {
         });
 
         queue = 'user'
-
-        if(type=='type1')
-        if(type=='type2')
-        if(type=='type3')
-        if(type=='type4')
         channel.prefetch(1);
         console.log(" [*] Waiting for messages in %s. To exit press CTRL+C", queue);
         channel.consume(queue, function(msg) {
