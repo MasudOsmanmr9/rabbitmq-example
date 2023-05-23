@@ -26,3 +26,6 @@ amqp.connect('amqp://localhost', function(error0, connection) {
         process.exit(0);
     }, 500);
 });
+
+//run :: node new_task.js Second message...
+// increase ... to delay, each . count as a second
