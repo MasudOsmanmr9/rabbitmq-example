@@ -8,7 +8,6 @@ amqp.connect('amqp://localhost', function(error, connection) {
             durable: true
         });
 
-        queue = 'user'
         channel.prefetch(1);
         console.log(" [*] Waiting for messages in %s. To exit press CTRL+C", queue);
         channel.consume(queue, function(msg) {
