@@ -11,7 +11,7 @@ amqp.connect('amqp://localhost', function(error0, connection) {
             throw error1;
         }
 
-        var queue = 'task_queue1';
+        var queue = 'task_queue3';
         var msg = process.argv.slice(2).join(' ') || "Hello World!";
         channel.assertQueue(queue, {
             durable: true

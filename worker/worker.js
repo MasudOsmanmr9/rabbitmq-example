@@ -2,13 +2,13 @@ var amqp = require('amqplib/callback_api');
 
 amqp.connect('amqp://localhost', function(error, connection) {
     connection.createChannel(function(error, channel) {
-        var queue = 'task_queue1';
+        var queue = 'task_queue3';
 
         channel.assertQueue(queue, {
             durable: true
         });
 
-        channel.prefetch(1);
+        channel.prefetch(2);
         console.log(" [*] Waiting for messages in %s. To exit press CTRL+C", queue);
         channel.consume(queue, function(msg) {
             var secs = msg.content.toString().split('.').length - 1;
